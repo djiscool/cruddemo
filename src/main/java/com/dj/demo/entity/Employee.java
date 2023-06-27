@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Table(name="employee")
 public class Employee {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="first_name")
@@ -20,6 +20,10 @@ public class Employee {
 	@Column(name="last_name")
 	private String lastName;
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Column(name="email")
 	private String email;
 	
